@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#cfe8b8">
+  <title>Gassy Grub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="app">
+    <header id="hud">
+      <div class="stat"><span class="label">Score</span><span id="score">0</span></div>
+      <div class="stat"><span class="label">Length</span><span id="length">3</span></div>
+      <div class="stat"><span class="label">Best</span><span id="high">0</span></div>
+    </header>
+
+    <div id="board-wrap">
+      <canvas id="board" aria-label="Gassy Grub game board"></canvas>
+      <div id="caption" aria-live="polite"></div>
+
+      <div id="start-screen" class="overlay">
+        <h1>Gassy Grub</h1>
+        <p class="rules">Eat leaves to grow. Go hungry too long and you'll fart off a third of your body.</p>
+        <p class="hint">Arrows / WASD or swipe to steer</p>
+        <button class="btn" id="start-btn">Start</button>
+        <p class="hint small">Space or tap to start &amp; pause</p>
+      </div>
+
+      <div id="pause-screen" class="overlay hidden">
+        <h2>Paused</h2>
+        <p class="hint">Space or tap to resume</p>
+      </div>
+
+      <div id="over-screen" class="overlay hidden">
+        <h2>Game Over</h2>
+        <p id="cause" class="cause"></p>
+        <p class="final">Score <strong id="final-score">0</strong></p>
+        <p class="final">Best <strong id="final-high">0</strong></p>
+        <p id="new-best" class="new-best hidden">New high score!</p>
+        <button class="btn" id="restart-btn">Play again</button>
+      </div>
+    </div>
+
+    <div id="hunger">
+      <span class="label">Hunger</span>
+      <div id="hunger-track"><div id="hunger-fill"></div></div>
+    </div>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>

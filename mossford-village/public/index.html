@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Mossford Village</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="game"></div>
+
+  <div id="join-overlay">
+    <form id="join-form">
+      <h1>Mossford</h1>
+      <p>What do they call you, traveler?</p>
+      <input id="join-name" maxlength="16" autocomplete="off" placeholder="Your name" required>
+      <button type="submit">Enter the village</button>
+    </form>
+  </div>
+
+  <button id="talk-btn" class="hidden" type="button"></button>
+
+  <div id="chat" class="hidden">
+    <div id="chat-head">
+      <span id="chat-title"></span>
+      <button id="chat-close" type="button" aria-label="Close">&times;</button>
+    </div>
+    <div id="chat-log"></div>
+    <form id="chat-form">
+      <input id="chat-input" maxlength="300" autocomplete="off" enterkeyhint="send" placeholder="Say something...">
+      <button type="submit">Send</button>
+    </form>
+  </div>
+
+  <div id="quests">
+    <button id="quests-toggle" type="button">Quests (0)</button>
+    <ul id="quests-list" class="hidden"></ul>
+  </div>
+
+  <div id="dpad" class="hidden">
+    <button type="button" data-dir="up" class="up">&#9650;</button>
+    <button type="button" data-dir="left" class="left">&#9664;</button>
+    <button type="button" data-dir="right" class="right">&#9654;</button>
+    <button type="button" data-dir="down" class="down">&#9660;</button>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/phaser/3.80.1/phaser.min.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
